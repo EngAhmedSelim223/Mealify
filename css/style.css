@@ -1,0 +1,610 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clear-fix{
+  clear: both;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* Start Navbar */
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10px;
+}
+
+.logo h2 {
+  color: black;
+  font-family: "open sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  position: relative;
+}
+.logo a {
+  text-decoration: none;
+}
+.logo h2::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  bottom: 20%;
+  background-color: hsl(0, 84%, 44%);
+  position: absolute;
+  border-radius: 100%;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu ul li {
+  margin-right: 40px;
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: gray;
+  font-family: "open sans", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.menu ul li::after {
+  content: "";
+  width: 0;
+  height: 2.5px;
+  background-color: hsl(0, 84%, 44%);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -ms-transition: width 0.5s;
+  -o-transition: width 0.5s;
+}
+
+.menu ul li:hover::after {
+  width: 100%;
+}
+
+.menu ul li span {
+  color: black;
+  position: relative;
+}
+
+.menu ul li span::after {
+  content: "";
+  width: 100%;
+  height: 2.5px;
+  background-color: hsl(0, 84%, 44%);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* End Navbar */
+
+/* Start Home*/
+.section2 {
+  background-color: #eeeeee;
+}
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+}
+.content h2 {
+  font-family: "Amatic SC", cursive;
+  font-size: 65px;
+  font-weight: 700;
+}
+
+.content p {
+  font-family: "open sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.image img {
+  width: 100%;
+  height: 480px;
+  display: block;
+}
+
+.home .content a:hover{
+  color: hsl(0, 84%, 44%);
+}
+
+.home .image:hover {
+  position: relative;
+  animation-name: checking;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes checking {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 10px;
+    top: 0px;
+  }
+  /* 50%  {left:10px; top:10px;} */
+  /* 75%  {left:0px; top:10px;} */
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+.home .content a {
+  font-family: "open sans";
+  font-weight: 600;
+}
+.content button {
+  margin-top: 25px;
+  background-color: hsl(0, 84%, 44%);
+  color: white;
+  padding: 15px 22px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 15px 50px 50px;
+  -webkit-border-radius: 15px 50px 50px;
+  -moz-border-radius: 15px 50px 50px;
+  -ms-border-radius: 15px 50px 50px;
+  -o-border-radius: 15px 50px 50px;
+}
+
+.content a {
+  text-decoration: none;
+  margin-left: 25px;
+  color: black;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+.content a i {
+  margin-right: 10px;
+}
+.content a i::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 3px solid hsl(0, 84%, 44%);
+  position: absolute;
+  left: -7px;
+  top: -3.5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+/* End Home*/
+
+/* Start Chefs */
+#chefs {
+  margin-top: 50px;
+}
+
+.chefs .caption {
+  text-align: center;
+}
+.chefs .caption h2 {
+  color: gray;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.chefs .caption p {
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.staff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.card .image {
+  width: 100%;
+  padding-top: 100%; /* Maintain aspect ratio */
+  position: relative;
+  overflow: hidden;
+}
+
+.card .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .card-content {
+  text-align: center;
+  padding: 20px; /* Add padding */
+}
+
+.card .card-content h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 18px; /* Adjusted font size */
+  font-weight: 600; /* Adjusted font weight */
+  color: black;
+}
+
+.card .card-content span {
+  font-family: "Open Sans", sans-serif; /* Corrected font family */
+  color: gray;
+}
+
+.card .social {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(247, 246, 246, 0.5);
+  top: 50px;
+  right: 10px;
+  z-index: 9;
+  border-radius: 5px;
+  display: none;
+  transition: display 0.3s ease;
+  -webkit-transition: display 0.3s ease;
+  -moz-transition: display 0.3s ease;
+  -ms-transition: display 0.3s ease;
+  -o-transition: display 0.3s ease;
+}
+
+.card .social i {
+  color: gray;
+  padding: 15px;
+}
+
+.card:hover .social {
+  display: flex;
+}
+
+.card .social i:hover {
+  color: black;
+}
+/* End Chefs */
+
+/* Start Gallery */
+#Galery {
+  margin-top: 50px;
+  background-color: #eeeeee;
+  padding-top: 75px;
+}
+
+.gallery .gallery-caption{
+  text-align: center;
+}
+
+.gallery .gallery-caption h2 {
+  color: gray;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.gallery .gallery-caption p {
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.gallery-images {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.gallery-images .images-left, .gallery-images .images-center, .gallery-images .images-right{
+  flex: 1;
+}
+
+.gallery-images .images-left img, .gallery-images .images-center img, .gallery-images .images-right img{
+  width: 100%;
+  display: block;
+  border: 5px solid white;
+}
+
+.left-image1, .left-image2, .center-image1, .center-image2, .right-image1, .right-image2{
+  padding: 10px;
+  position: relative;
+}
+
+.layer {
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  width:100%;
+  height: 100%;
+  position: absolute;
+  /*top: 0;
+  left: 0;
+  right: 0;
+  */display: none;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-image1:hover .layer, .left-image2:hover .layer, .center-image1:hover .layer, .center-image2:hover .layer, .right-image1:hover .layer, .right-image2:hover .layer, .right-image:hover .layer{
+  cursor: pointer;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+/* End Gallery */
+
+
+/* Start Contact*/
+#contact{
+  margin-top: 75px;
+}
+
+.contact .contact-caption{
+  text-align: center;
+}
+
+.contact .contact-caption h2 {
+  color: gray;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.contact .contact-caption p {
+  font-family: "Amatic SC", cursive;
+  font-size: 50px;
+  font-weight: 400;
+}
+.contact-info {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap:20px;
+}
+
+.left-side, .right-side {
+  flex: 1;
+}
+
+.one, .two {
+  background-color: #F5F5F5;
+  margin-bottom: 15px;
+  padding: 25px;
+  position: relative;
+}
+
+.one h3, .two h3 {
+  color: gray;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+}
+
+.one p, .two p{
+  font-family: "open sans", sans-serif;
+}
+
+.one i, .two i {
+  background-color: #CE1212;
+  color: white;
+  padding: 20px;
+  float: left;
+  margin-right: 15px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form button {
+  background-color: #CE1212;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+/*End Contact*/
+
+
+/* Start Footer*/
+#footer{
+  margin-top: 75px;
+  padding-top: 50px;
+  background-color: black;
+  color: white;
+  
+}
+
+.footer{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.footer-left{
+
+  flex: 1;
+}
+
+.footer-left img{
+  width:50px;
+  float: left;
+  margin: 5px;
+}
+.footer-left h2{
+  font-family: "open sans", sans-serif;
+  font-size: 30px;
+  font-size: 700;
+}
+
+.footer-left h3{
+  font-family: "open sans", sans-serif;
+  margin-top: 15px;
+  text-align: center;
+  border-bottom: 2px solid gray;
+}
+
+.footer-left ul{
+  margin-top: 15px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-left ul li i{
+  color: white;
+}
+
+.footer-left ul li{
+  margin-right: 10px;
+}
+.footer-center{
+
+  flex: 1;
+}
+
+.footer-right{
+  flex: 1;
+}
+
+.footer-center form{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-center form input[type='email']{
+  flex: 3;
+}
+
+.footer-center form input[type='submit']{
+  flex: 1;
+  color: white;
+  background-color: #CE1212;
+  font-size: 16px;
+}
+
+.quick-links h3{
+  font-family: "open sans", sans-serif;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.quick-links ul{
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+#footer > div > div.footer-center > h3:nth-child(4){
+  margin-bottom: 15px;
+}
+.quick-links ul li a{
+  color: white;
+  text-decoration: none;
+}
+
+.quick-links ul li::before{
+  content: ">";
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.footer-right h3{
+  font-family: "open sans", sans-serif;
+  margin-bottom: 15px;
+}
+
+.footer-right ul{
+  list-style-type: none;
+}
+.footer-right ul li{
+  margin-bottom: 15px;
+}
+.footer-right li a{
+  color: white;
+  text-decoration: none;
+}
+
+.footer-right li {
+  font-size: 22px;
+  color: #CE1212;
+}
+/* End Footer*/
+
+@media screen and (max-width: 768px) {
+  .w-md-100 {
+    flex-direction: column;
+  }}
